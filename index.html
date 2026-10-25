@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Apps for Muslim families: Hisab, Al Ansab, Learn the Seerah and Kids Quran.">
+<meta name="description" content="Apps for Muslim families: Hifdh Helper, Kids Quran, Learn the Seerah, Kalimat, Takallum, Hisab and Al Ansab.">
 <title>Ummah Apps</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
   body { margin: 0; }
   :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
   /* Layout: a dark night-sky band with an eight-point star lattice holds the name;
-     the app cards rise out of it in a two-column grid, each app keeping its own colour */
+     below it the apps sit in three groups, each group keeping its own colour */
   :root {
     --night: #0b2422;
     --night-ink: #eaf4f0;
@@ -29,10 +29,9 @@
     --muted: #586f6a;
     --line: #dbe5e1;
     --gold: #c9a24a;
-    --c-hisab: #b8862b;  --t-hisab: #f7eedb;
-    --c-ansab: #8a4d7c;  --t-ansab: #f3e6f0;
-    --c-seerah: #127a66; --t-seerah: #ddf1eb;
-    --c-quran: #2f6fb5;  --t-quran: #e1ecf8;
+    --c-quran: #127a66;  --t-quran: #ddf1eb;
+    --c-arabic: #2f6fb5; --t-arabic: #e1ecf8;
+    --c-family: #a5772a; --t-family: #f7eedb;
     --shadow: 0 1px 2px rgba(11, 36, 34, .06), 0 8px 24px rgba(11, 36, 34, .07);
     --display: "Reem Kufi", "Segoe UI", system-ui, sans-serif;
     --body: "Figtree", "Segoe UI", system-ui, sans-serif;
@@ -40,20 +39,18 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --night: #071917; --bg: #0c1614; --surface: #13211e; --ink: #e6f0ec; --muted: #94aaa4; --line: #22332f;
-      --c-hisab: #e0b45c; --t-hisab: #2c2414;
-      --c-ansab: #d495c5; --t-ansab: #2c1c28;
-      --c-seerah: #4fc9a9; --t-seerah: #12302a;
-      --c-quran: #7fb2ec; --t-quran: #16263a;
+      --c-quran: #4fc9a9;  --t-quran: #12302a;
+      --c-arabic: #7fb2ec; --t-arabic: #16263a;
+      --c-family: #e0b45c; --t-family: #2c2414;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --night: #071917; --bg: #0c1614; --surface: #13211e; --ink: #e6f0ec; --muted: #94aaa4; --line: #22332f;
-    --c-hisab: #e0b45c; --t-hisab: #2c2414;
-    --c-ansab: #d495c5; --t-ansab: #2c1c28;
-    --c-seerah: #4fc9a9; --t-seerah: #12302a;
-    --c-quran: #7fb2ec; --t-quran: #16263a;
+    --c-quran: #4fc9a9;  --t-quran: #12302a;
+    --c-arabic: #7fb2ec; --t-arabic: #16263a;
+    --c-family: #e0b45c; --t-family: #2c2414;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
     color-scheme: dark;
   }
@@ -61,7 +58,7 @@
   body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
   body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--night); }
   .wrap {
-    max-width: 960px; margin: 0 auto;
+    max-width: 1040px; margin: 0 auto;
     padding-left: max(20px, env(safe-area-inset-left, 0px));
     padding-right: max(20px, env(safe-area-inset-right, 0px));
   }
@@ -74,59 +71,66 @@
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.075'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3Cpath d='M0 0L18 18M64 0L46 18M0 64L18 46M64 64L46 46'/%3E%3C/g%3E%3C/svg%3E");
     color: var(--night-ink);
   }
-  .hero .wrap { padding-block: 72px 112px; display: grid; justify-items: center; text-align: center; gap: 14px; }
+  .hero .wrap { padding-block: 72px 64px; display: grid; justify-items: center; text-align: center; gap: 14px; }
   .star { width: 44px; height: 44px; color: var(--gold); }
   .arabic { font-family: var(--display); font-size: 1.35rem; color: var(--gold); line-height: 1; margin: 0; }
   h1 {
     font-family: var(--display); font-weight: 700; margin: 0;
     font-size: clamp(2.6rem, 9vw, 4.5rem); line-height: 1; letter-spacing: -.01em; text-wrap: balance;
   }
-  .hero p.lede { margin: 4px 0 0; color: var(--night-muted); max-width: 44ch; font-size: 1.08rem; }
+  .hero p.lede { margin: 4px 0 0; color: var(--night-muted); max-width: 46ch; font-size: 1.08rem; }
 
-  /* App grid */
-  .apps { list-style: none; margin: -72px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; position: relative; }
-  @media (max-width: 680px) { .apps { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
+  /* Groups */
+  main.wrap { padding-block: 48px 8px; display: grid; gap: 48px; }
+  .group { --c: var(--c-quran); --t: var(--t-quran); display: grid; gap: 18px; }
+  .group.arabic-g { --c: var(--c-arabic); --t: var(--t-arabic); }
+  .group.family   { --c: var(--c-family); --t: var(--t-family); }
+  .group-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .group-head h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; margin: 0; color: var(--ink); }
+  .group-head .ar { font-family: var(--display); color: var(--c); font-size: 1.1rem; }
+  .group-head::after { content: ""; flex: 1 1 40px; height: 1px; background: var(--line); align-self: center; }
+
+  .apps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
 
   .app {
-    --c: var(--c-seerah); --t: var(--t-seerah);
     height: 100%; display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px;
     padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
     box-shadow: var(--shadow); color: inherit; text-decoration: none; position: relative; overflow: hidden;
-    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    transition: transform .2s ease, border-color .2s ease;
   }
   .app::after { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--c); opacity: 0; transition: opacity .2s ease; }
-  .app:hover { transform: translateY(-3px); border-color: var(--c); }
-  .app:hover::after { opacity: 1; }
-  .app:focus-visible { outline: 3px solid var(--c); outline-offset: 3px; }
-  .app.hisab  { --c: var(--c-hisab);  --t: var(--t-hisab); }
-  .app.ansab  { --c: var(--c-ansab);  --t: var(--t-ansab); }
-  .app.seerah { --c: var(--c-seerah); --t: var(--t-seerah); }
-  .app.quran  { --c: var(--c-quran);  --t: var(--t-quran); }
+  a.app:hover { transform: translateY(-3px); border-color: var(--c); }
+  a.app:hover::after { opacity: 1; }
+  a.app:focus-visible { outline: 3px solid var(--c); outline-offset: 3px; }
+  .app.soon { box-shadow: none; border-style: dashed; background: transparent; }
 
   .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .glyph {
     width: 60px; height: 60px; border-radius: 16px; background: var(--t); color: var(--c);
     display: grid; place-items: center; font-family: var(--display); font-size: 30px; font-weight: 600; line-height: 1;
   }
+  .glyph.word { font-size: 21px; }
   .tag {
     font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
     color: var(--c); background: var(--t); padding: 5px 10px; border-radius: 999px;
   }
-  .name { font-family: var(--display); font-weight: 600; font-size: 1.6rem; line-height: 1.15; margin: 0; }
+  .soon .tag { color: var(--muted); background: transparent; border: 1px dashed var(--line); }
+  .name { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin: 0; }
   .desc { color: var(--muted); margin: 0; min-width: 0; }
   .foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid var(--line); min-width: 0; }
   .url { font-size: .85rem; color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
   .open { font-weight: 600; font-size: .92rem; color: var(--c); white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
   .open span { transition: transform .2s ease; }
-  .app:hover .open span { transform: translateX(3px); }
+  a.app:hover .open span { transform: translateX(3px); }
+  .soon .open { color: var(--muted); font-weight: 500; }
 
   footer .wrap { padding-block: 48px 40px; display: grid; justify-items: center; gap: 6px; text-align: center; color: var(--muted); font-size: .88rem; }
   footer .arabic { font-size: 1rem; }
 
   @media (prefers-reduced-motion: reduce) {
     .app, .app::after, .open span { transition: none; }
-    .app:hover { transform: none; }
-    .app:hover .open span { transform: none; }
+    a.app:hover { transform: none; }
+    a.app:hover .open span { transform: none; }
   }
 </style>
 </head>
@@ -143,69 +147,135 @@
     </svg>
     <p class="arabic" lang="ar" dir="rtl">تطبيقات الأمة</p>
     <h1>Ummah Apps</h1>
-    <p class="lede">Apps for Muslim families, for learning the Quran and the Seerah, managing money the Islamic way and keeping track of your family tree.</p>
+    <p class="lede">Apps for Muslim families, for memorising the Quran, learning the Seerah and Arabic, managing money the Islamic way and keeping track of your family tree.</p>
   </div>
 </header>
 
 <main class="wrap">
-  <ul class="apps">
-    <li>
-      <a class="app hisab" href="https://hisab.ummahapps.ai/" target="_blank" rel="noopener">
-        <div class="top">
-          <span class="glyph" aria-hidden="true" lang="ar">ح</span>
-          <span class="tag">Finance</span>
+  <section class="group" aria-labelledby="g-quran">
+    <div class="group-head">
+      <h2 id="g-quran">Quran &amp; Seerah</h2>
+      <span class="ar" lang="ar" dir="rtl">القرآن والسيرة</span>
+    </div>
+    <ul class="apps">
+      <li>
+        <a class="app" href="https://hifdh-helper.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph word" aria-hidden="true" lang="ar">حفظ</span>
+            <span class="tag">Hifz</span>
+          </div>
+          <h3 class="name">Hifdh Helper</h3>
+          <p class="desc">Set a memorisation goal and get daily targets for new hifz and revision, with spaced repetition and hard-page reviews, page by page in the 604-page Madinah mushaf.</p>
+          <div class="foot">
+            <span class="url">hifdh-helper.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="app" href="https://kids-quran.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ق</span>
+            <span class="tag">Kids</span>
+          </div>
+          <h3 class="name">Kids Quran</h3>
+          <p class="desc">Helps children memorise Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar and Ayatul Kursi, with recitation, repeat, slow mode and English translation.</p>
+          <div class="foot">
+            <span class="url">kids-quran.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="app" href="https://seerah.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">س</span>
+            <span class="tag">Seerah</span>
+          </div>
+          <h3 class="name">Learn the Seerah</h3>
+          <p class="desc">Learn the life of the Prophet ﷺ through the Seerah Song by Zain Bikha. Listen line by line, repeat each verse and star every line you learn.</p>
+          <div class="foot">
+            <span class="url">seerah.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group arabic-g" aria-labelledby="g-arabic">
+    <div class="group-head">
+      <h2 id="g-arabic">Arabic</h2>
+      <span class="ar" lang="ar" dir="rtl">اللغة العربية</span>
+    </div>
+    <ul class="apps">
+      <li>
+        <a class="app" href="https://kalimat.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ك</span>
+            <span class="tag">Vocabulary</span>
+          </div>
+          <h3 class="name">Kalimat</h3>
+          <p class="desc">Learn 400+ everyday Arabic words in full harakat, with spoken audio, sound and broken plurals, a quiz game and your own word list.</p>
+          <div class="foot">
+            <span class="url">kalimat.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <div class="app soon">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ت</span>
+            <span class="tag">Coming soon</span>
+          </div>
+          <h3 class="name">Takallum</h3>
+          <p class="desc">Speaking practice for Modern Standard Arabic. Say sentences out loud with pattern drills, transformation chains and role-play conversations, with audio and full vowel marks.</p>
+          <div class="foot">
+            <span class="url">takallum.ummahapps.ai</span>
+            <span class="open">Not live yet</span>
+          </div>
         </div>
-        <h2 class="name">Hisab</h2>
-        <p class="desc">Track sadaqa, calculate zakat, manage fidyah, record loans, work out faraid and plan your Islamic will.</p>
-        <div class="foot">
-          <span class="url">hisab.ummahapps.ai</span>
-          <span class="open">Open <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="app ansab" href="https://alansab.app/" target="_blank" rel="noopener">
-        <div class="top">
-          <span class="glyph" aria-hidden="true" lang="ar">ن</span>
-          <span class="tag">Family</span>
-        </div>
-        <h2 class="name">Al Ansab</h2>
-        <p class="desc">A private family tree built around nasab, mahram, fara'id and remembering our elders.</p>
-        <div class="foot">
-          <span class="url">alansab.app</span>
-          <span class="open">Open <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="app seerah" href="https://seerah.ummahapps.ai/" target="_blank" rel="noopener">
-        <div class="top">
-          <span class="glyph" aria-hidden="true" lang="ar">س</span>
-          <span class="tag">Learning</span>
-        </div>
-        <h2 class="name">Learn the Seerah</h2>
-        <p class="desc">Learn the life of the Prophet ﷺ through the Seerah Song by Zain Bikha. Listen line by line, repeat each verse and star every line you learn.</p>
-        <div class="foot">
-          <span class="url">seerah.ummahapps.ai</span>
-          <span class="open">Open <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="app quran" href="https://kids-quran.ummahapps.ai/" target="_blank" rel="noopener">
-        <div class="top">
-          <span class="glyph" aria-hidden="true" lang="ar">ق</span>
-          <span class="tag">Kids</span>
-        </div>
-        <h2 class="name">Kids Quran</h2>
-        <p class="desc">Helps children memorise Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar and Ayatul Kursi, with recitation, repeat, slow mode and English translation.</p>
-        <div class="foot">
-          <span class="url">kids-quran.ummahapps.ai</span>
-          <span class="open">Open <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group family" aria-labelledby="g-family">
+    <div class="group-head">
+      <h2 id="g-family">Family &amp; Finance</h2>
+      <span class="ar" lang="ar" dir="rtl">الأسرة والمال</span>
+    </div>
+    <ul class="apps">
+      <li>
+        <a class="app" href="https://hisab.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ح</span>
+            <span class="tag">Finance</span>
+          </div>
+          <h3 class="name">Hisab</h3>
+          <p class="desc">Track sadaqa, calculate zakat, manage fidyah, record loans, work out faraid and plan your Islamic will.</p>
+          <div class="foot">
+            <span class="url">hisab.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="app" href="https://alansab.app/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ن</span>
+            <span class="tag">Family</span>
+          </div>
+          <h3 class="name">Al Ansab</h3>
+          <p class="desc">A private family tree built around nasab, mahram, fara'id and remembering our elders.</p>
+          <div class="foot">
+            <span class="url">alansab.app</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
 </main>
 
 <footer>
