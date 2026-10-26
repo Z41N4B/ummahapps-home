@@ -32,6 +32,7 @@
     --c-quran: #127a66;  --t-quran: #ddf1eb;
     --c-arabic: #2f6fb5; --t-arabic: #e1ecf8;
     --c-family: #a5772a; --t-family: #f7eedb;
+    --c-kids: #8a4d7c;   --t-kids: #f3e6f0;
     --shadow: 0 1px 2px rgba(11, 36, 34, .06), 0 8px 24px rgba(11, 36, 34, .07);
     --display: "Reem Kufi", "Segoe UI", system-ui, sans-serif;
     --body: "Figtree", "Segoe UI", system-ui, sans-serif;
@@ -42,6 +43,7 @@
       --c-quran: #4fc9a9;  --t-quran: #12302a;
       --c-arabic: #7fb2ec; --t-arabic: #16263a;
       --c-family: #e0b45c; --t-family: #2c2414;
+      --c-kids: #d495c5;   --t-kids: #2c1c28;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
       color-scheme: dark;
     }
@@ -51,6 +53,7 @@
     --c-quran: #4fc9a9;  --t-quran: #12302a;
     --c-arabic: #7fb2ec; --t-arabic: #16263a;
     --c-family: #e0b45c; --t-family: #2c2414;
+      --c-kids: #d495c5;   --t-kids: #2c1c28;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
     color-scheme: dark;
   }
@@ -85,6 +88,8 @@
   .group { --c: var(--c-quran); --t: var(--t-quran); display: grid; gap: 18px; }
   .group.arabic-g { --c: var(--c-arabic); --t: var(--t-arabic); }
   .group.family   { --c: var(--c-family); --t: var(--t-family); }
+  .group.kids     { --c: var(--c-kids); --t: var(--t-kids); }
+  .apps.solo { grid-template-columns: minmax(0, 520px); }
   .group-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .group-head h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; margin: 0; color: var(--ink); }
   .group-head .ar { font-family: var(--display); color: var(--c); font-size: 1.1rem; }
@@ -152,17 +157,17 @@
 </header>
 
 <main class="wrap">
-  <section class="group" aria-labelledby="g-quran">
+  <section class="group" aria-labelledby="g-hifdh">
     <div class="group-head">
-      <h2 id="g-quran">Quran &amp; Seerah</h2>
-      <span class="ar" lang="ar" dir="rtl">القرآن والسيرة</span>
+      <h2 id="g-hifdh">Hifdh</h2>
+      <span class="ar" lang="ar" dir="rtl">الحفظ</span>
     </div>
-    <ul class="apps">
+    <ul class="apps solo">
       <li>
         <a class="app" href="https://hifdh-helper.ummahapps.ai/" target="_blank" rel="noopener">
           <div class="top">
             <span class="glyph word" aria-hidden="true" lang="ar">حفظ</span>
-            <span class="tag">Hifz</span>
+            <span class="tag">Tracker</span>
           </div>
           <h3 class="name">Hifdh Helper</h3>
           <p class="desc">Set a memorisation goal and get daily targets for new hifz and revision, with spaced repetition and hard-page reviews, page by page in the 604-page Madinah mushaf.</p>
@@ -172,11 +177,20 @@
           </div>
         </a>
       </li>
+    </ul>
+  </section>
+
+  <section class="group kids" aria-labelledby="g-kids">
+    <div class="group-head">
+      <h2 id="g-kids">Kids</h2>
+      <span class="ar" lang="ar" dir="rtl">الأطفال</span>
+    </div>
+    <ul class="apps">
       <li>
         <a class="app" href="https://kids-quran.ummahapps.ai/" target="_blank" rel="noopener">
           <div class="top">
             <span class="glyph" aria-hidden="true" lang="ar">ق</span>
-            <span class="tag">Kids</span>
+            <span class="tag">Quran</span>
           </div>
           <h3 class="name">Kids Quran</h3>
           <p class="desc">Helps children memorise Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar and Ayatul Kursi, with recitation, repeat, slow mode and English translation.</p>
@@ -196,6 +210,20 @@
           <p class="desc">Learn the life of the Prophet ﷺ through the Seerah Song by Zain Bikha. Listen line by line, repeat each verse and star every line you learn.</p>
           <div class="foot">
             <span class="url">seerah.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="app" href="https://nature-spotters.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ط</span>
+            <span class="tag">Nature</span>
+          </div>
+          <h3 class="name">Nature Spotters</h3>
+          <p class="desc">A nature journal for children and families. Log the plants, animals, bugs and skies you spot, add photos, watch the seasons change and remember Allah&#39;s signs.</p>
+          <div class="foot">
+            <span class="url">nature-spotters.ummahapps.ai</span>
             <span class="open">Open <span aria-hidden="true">→</span></span>
           </div>
         </a>
@@ -256,24 +284,10 @@
 
   <section class="group family" aria-labelledby="g-family">
     <div class="group-head">
-      <h2 id="g-family">Family</h2>
-      <span class="ar" lang="ar" dir="rtl">الأسرة</span>
+      <h2 id="g-family">Family and Finance</h2>
+      <span class="ar" lang="ar" dir="rtl">الأسرة والمال</span>
     </div>
     <ul class="apps">
-      <li>
-        <a class="app" href="https://nature-spotters.ummahapps.ai/" target="_blank" rel="noopener">
-          <div class="top">
-            <span class="glyph" aria-hidden="true" lang="ar">ط</span>
-            <span class="tag">Nature</span>
-          </div>
-          <h3 class="name">Nature Spotters</h3>
-          <p class="desc">A nature journal for children and families. Log the plants, animals, bugs and skies you spot, add photos, watch the seasons change and remember Allah&#39;s signs.</p>
-          <div class="foot">
-            <span class="url">nature-spotters.ummahapps.ai</span>
-            <span class="open">Open <span aria-hidden="true">→</span></span>
-          </div>
-        </a>
-      </li>
       <li>
         <a class="app" href="https://hisab.ummahapps.ai/" target="_blank" rel="noopener">
           <div class="top">
