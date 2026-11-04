@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Apps for Muslim families: Hifdh Helper, Kids Quran, Learn the Seerah, Kalimat, Takallum, Kalimat Plus Plus, Nature Spotters, Hisab and Al Ansab.">
+<meta name="description" content="Apps for Muslim families: Hifdh Helper, Kids Qur’an, Takallum Kids, Learn the Seerah, Nature Spotters, Kalimat, Takallum, Kalimat Plus, Hisab and Al Ansab.">
 <title>Ummah Apps</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -90,6 +90,8 @@
   .group.family   { --c: var(--c-family); --t: var(--t-family); }
   .group.kids     { --c: var(--c-kids); --t: var(--t-kids); }
   .apps.solo { grid-template-columns: minmax(0, 520px); }
+  .apps.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 680px) { .apps.four { grid-template-columns: minmax(0, 1fr); } }
   .group-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .group-head h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; margin: 0; color: var(--ink); }
   .group-head .ar { font-family: var(--display); color: var(--c); font-size: 1.1rem; }
@@ -152,7 +154,7 @@
     </svg>
     <p class="arabic" lang="ar" dir="rtl">تطبيقات للأمة</p>
     <h1>Ummah Apps</h1>
-    <p class="lede">Apps for Muslim families, for memorising the Quran, learning the Seerah and Arabic, exploring nature, managing money the Islamic way and keeping track of your family tree.</p>
+    <p class="lede">Apps for Muslim families, for memorising the Qur’an, learning the Seerah and Arabic, exploring nature, managing money the Islamic way and keeping track of your family tree.</p>
   </div>
 </header>
 
@@ -170,7 +172,7 @@
             <span class="tag">Tracker</span>
           </div>
           <h3 class="name">Hifdh Helper</h3>
-          <p class="desc">Set a memorisation goal and get daily targets for new hifz and revision, with spaced repetition and hard-page reviews, page by page in the 604-page Madinah mushaf.</p>
+          <p class="desc">Daily targets for new hifdh, spaced repetition revision and a full revision cycle, with surah-by-surah progress, hard pages, modes for being sick, travelling or on your period, and a Ramadan mode with a khatm tracker.</p>
           <div class="foot">
             <span class="url">hifdh-helper.ummahapps.ai</span>
             <span class="open">Open <span aria-hidden="true">→</span></span>
@@ -185,17 +187,31 @@
       <h2 id="g-kids">Kids</h2>
       <span class="ar" lang="ar" dir="rtl">الأطفال</span>
     </div>
-    <ul class="apps">
+    <ul class="apps four">
       <li>
         <a class="app" href="https://kids-quran.ummahapps.ai/" target="_blank" rel="noopener">
           <div class="top">
             <span class="glyph" aria-hidden="true" lang="ar">ق</span>
-            <span class="tag">Quran</span>
+            <span class="tag">Qur’an</span>
           </div>
-          <h3 class="name">Kids Quran</h3>
+          <h3 class="name">Kids Qur’an</h3>
           <p class="desc">Helps children memorise Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar and Ayatul Kursi, with recitation, repeat, slow mode and English translation.</p>
           <div class="foot">
             <span class="url">kids-quran.ummahapps.ai</span>
+            <span class="open">Open <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="app" href="https://takallum-kids.ummahapps.ai/" target="_blank" rel="noopener">
+          <div class="top">
+            <span class="glyph" aria-hidden="true" lang="ar">ت</span>
+            <span class="tag">Arabic</span>
+          </div>
+          <h3 class="name">Takallum Kids</h3>
+          <p class="desc">Arabic speaking practice for children aged 4 to 11. Learn first words with pictures and audio, then say short sentences made only from those words, in fully vowelled Arabic with boy and girl forms.</p>
+          <div class="foot">
+            <span class="url">takallum-kids.ummahapps.ai</span>
             <span class="open">Open <span aria-hidden="true">→</span></span>
           </div>
         </a>
@@ -221,7 +237,7 @@
             <span class="tag">Nature</span>
           </div>
           <h3 class="name">Nature Spotters</h3>
-          <p class="desc">A nature journal for children and families. Log the plants, animals, bugs and skies you spot, add photos, watch the seasons change and remember Allah&#39;s signs.</p>
+          <p class="desc">A nature journal for children and families. Log the plants, animals, bugs and skies you spot, identify tree leaves, add photos, watch the seasons change and remember Allah&#39;s signs.</p>
           <div class="foot">
             <span class="url">nature-spotters.ummahapps.ai</span>
             <span class="open">Open <span aria-hidden="true">→</span></span>
@@ -268,11 +284,11 @@
       <li>
         <a class="app" href="https://kalimat-plus.ummahapps.ai/" target="_blank" rel="noopener">
           <div class="top">
-            <span class="glyph word" aria-hidden="true" lang="ar">ك++</span>
+            <span class="glyph word" aria-hidden="true" lang="ar">ك+</span>
             <span class="tag">Intermediate</span>
           </div>
-          <h3 class="name">Kalimat Plus Plus</h3>
-          <p class="desc">Fusha vocabulary for intermediate learners: 240+ words and phrases for giving opinions, faith and worship, character and the environment, with audio, verb forms, plurals, example sentences and games.</p>
+          <h3 class="name">Kalimat Plus</h3>
+          <p class="desc">Fusha vocabulary for intermediate learners: 270+ words and phrases for religion and worship, tarbiyyah and upbringing, relationships and character, and the environment, with audio, verb forms, plurals, example sentences and games.</p>
           <div class="foot">
             <span class="url">kalimat-plus.ummahapps.ai</span>
             <span class="open">Open <span aria-hidden="true">→</span></span>
