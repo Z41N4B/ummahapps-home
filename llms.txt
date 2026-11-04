@@ -12,7 +12,6 @@
 - [Takallum Kids](https://takallum-kids.ummahapps.ai/): Arabic speaking practice for children aged 4 to 11.
 - [Learn the Seerah](https://seerah.ummahapps.ai/): learn the life of the Prophet through the Seerah Song by Zain Bikha, line by line.
 - [Nature Spotters](https://nature-spotters.ummahapps.ai/): a nature journal for children and families.
-- [Five Pillars Explorer](https://five-pillars.ummahapps.ai/): children learn Shahada, Salah, Zakat, Sawm and Hajj with story cards, read-aloud and quizzes.
 
 ## Arabic
 
