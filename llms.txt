@@ -1,0 +1,26 @@
+# Ummah Apps
+
+> Ummah Apps (تطبيقات للأمة) makes apps for Muslim families, for memorising the Qur'an, learning the Seerah and Arabic, exploring nature, managing money the Islamic way and keeping track of a family tree. URL: https://ummahapps.ai/
+
+## Hifdh
+
+- [Hifdh Helper](https://hifdh-helper.ummahapps.ai/): Qur'an memorisation tracker with daily targets, spaced repetition revision and a full revision cycle.
+
+## Kids
+
+- [Kids Qur'an](https://kids-quran.ummahapps.ai/): helps children memorise Al-Fatiha, Ayatul Kursi, Al-Insan and short surahs, with recitation, repeat, slow mode and English translation.
+- [Takallum Kids](https://takallum-kids.ummahapps.ai/): Arabic speaking practice for children aged 4 to 11.
+- [Learn the Seerah](https://seerah.ummahapps.ai/): learn the life of the Prophet through the Seerah Song by Zain Bikha, line by line.
+- [Nature Spotters](https://nature-spotters.ummahapps.ai/): a nature journal for children and families.
+- [Five Pillars Explorer](https://five-pillars.ummahapps.ai/): children learn Shahada, Salah, Zakat, Sawm and Hajj with story cards, read-aloud and quizzes.
+
+## Arabic
+
+- [Kalimat](https://kalimat.ummahapps.ai/): 400+ everyday Arabic words and Qur'an words, with harakat, audio, plurals and games, for beginners.
+- [Takallum](https://takallum.ummahapps.ai/): Modern Standard Arabic speaking drills, transformation chains and role-plays.
+- [Kalimat Plus](https://kalimat-plus.ummahapps.ai/): 270+ Fusha words and phrases for intermediate learners, on worship, tarbiyyah, character and the environment.
+
+## Family and finance
+
+- [Hisab](https://hisab.ummahapps.ai/): Islamic finance app for sadaqa, zakat, fidyah, loans, faraid and an Islamic will.
+- [Al Ansab](https://alansab.app/): a private family tree built around nasab, mahram, fara'id and remembering elders.
