@@ -15,7 +15,7 @@
 
 ## Arabic
 
-- [Kalimat](https://kalimat.ummahapps.ai/): 800+ everyday Arabic words and 540 Qur'an words, with harakat, audio, plurals and games, for beginners.
+- [Kalimat](https://kalimat.ummahapps.ai/): 900+ everyday Arabic words and 540 Qur'an words, with harakat, audio, plurals and games, for beginners.
 - [Takallum](https://takallum.ummahapps.ai/): Modern Standard Arabic speaking drills (900+ sentences, including GCSE Arabic speaking topics), transformation chains and role-plays.
 - [Kalimat Plus](https://kalimat-plus.ummahapps.ai/): 470+ Fusha words and phrases for intermediate learners, on worship, tarbiyyah, character, the environment and GCSE Arabic (Pearson Edexcel) topics.
 
